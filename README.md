@@ -11,7 +11,7 @@
 - Step 1 : `create-react-app react-mos`
 - Step 2 : `create css folder and added style.css file`
 - Step 3 : `import style.css & js script` file into `public > index.html` file
-- Step 4 : `Create single Component like Skills`
+- Step 4 : add bootstrap `npm i bootstrap@4.1.1`
 
 
 # Getting Started with Create React App

@@ -1,37 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import Counter from './components/counter';
 
-// const element = <h1>Hello world</h1>;
-// console.log(element)
-// ReactDOM.render(element, document.getElementById('root'))
+ReactDOM.render(
+  <Counter />,
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>,
+  document.getElementById('root')
+);
 
-// #ES6 Refresher 1 - var, let, const
-// var -> function
-// let -> block
-// const -> block
-
-// const x = 1;
-// x = 2;
-
-// function sayHello(){
-//   for (let i = 0; i<5;  i++){
-//     console.log(i)
-//   }
-//   console.log(i)
-// }
-// sayHello();
-
-
-// #ES6 Refresher 2 - Object
-
-// import './index.css';
-// import App from './App';
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
-
-
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();
