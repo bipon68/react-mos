@@ -1,3 +1,19 @@
+## git script
+- git init
+- git add README.md
+- git commit -m "first commit"
+- git branch -M main
+- git remote add origin https://github.com/bipon68/react-mos.git
+- git push -u origin main
+
+## Step by Step frontend app creation
+- `npm i -g create-react-app`
+- Step 1 : `create-react-app react-mos`
+- Step 2 : `create css folder and added style.css file`
+- Step 3 : `import style.css & js script` file into `public > index.html` file
+- Step 4 : `Create single Component like Skills`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
