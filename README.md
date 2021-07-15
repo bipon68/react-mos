@@ -11,7 +11,7 @@
 - Step 1 : `create-react-app react-mos`
 - Step 2 : `create css folder and added style.css file`
 - Step 3 : `import style.css & js script` file into `public > index.html` file
-- Step 4 : add bootstrap `npm i bootstrap@4.1.1`
+- Step 4 : add bootstrap `npm i bootstrap@4.1.1` and added `index.js` file `import 'bootstrap/dist/css/bootstrap.css'`
 
 
 # Getting Started with Create React App
