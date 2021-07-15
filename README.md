@@ -12,6 +12,8 @@
 - Step 2 : `create css folder and added style.css file`
 - Step 3 : `import style.css & js script` file into `public > index.html` file
 - Step 4 : add bootstrap `npm i bootstrap@4.1.1` and added `index.js` file `import 'bootstrap/dist/css/bootstrap.css'`
+- Step 5 : add bootstrap and font-awesome `npm i bootstrap@4.1.1 font-awesome@4.7.0`
+- Step 5 : index.js file `import 'font-awesome/css/font-awesome.css'` and `import 'bootstrap/dist/css/bootstrap.css';`
 
 
 # Getting Started with Create React App
