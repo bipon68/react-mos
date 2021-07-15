@@ -8,6 +8,7 @@ import React, { Component } from 'react';
     Setting Attributes
     Refactor
     Rendering Lists
+    Conditional Rendering
     <img src={this.state.imageUrl} alt=""/>
     <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
     <span style={{fontSize: 20}} className="badge badge-primary m-2">{this.formatCount()}</span>
@@ -24,6 +25,12 @@ class Counter extends Component {
         fontSize: 20,
         fontWeight: 'bold'
     }
+
+    renderTags(){
+        if(this.state.tags.length === 0) return <p>There are no tags!</p>;
+        return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
+    }
+
     render() { 
         // React.createElement('h1')
         // let classes = this.getBadgeClasses();
@@ -32,9 +39,7 @@ class Counter extends Component {
                 <span  className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button className="btn btn-secondary btn-sm">InCrement</button>
                 <div>
-                    <ul>
-                        {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-                    </ul>
+                   {this.renderTags()} 
                 </div>
             </React.Fragment>
         );
