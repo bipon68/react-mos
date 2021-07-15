@@ -10,6 +10,7 @@ import React, { Component } from 'react';
     Rendering Lists
     Conditional Rendering
     Handling Events
+    Passing Event Arguments
     <img src={this.state.imageUrl} alt=""/>
     <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
     <span style={{fontSize: 20}} className="badge badge-primary m-2">{this.formatCount()}</span>
@@ -22,11 +23,11 @@ class Counter extends Component {
         imageUrl: 'https://picsum.photos/200',
         tags: ['tag 1', 'tag 2', 'tag 3']
     };
-    // constructor(){
-    //     super();
-    //     console.log('constructor ', this)
-    //     this.handleIncrement = this.handleIncrement.bind(this);
-    // }
+    constructor(){
+        super();
+        console.log('constructor ', this)
+        this.handleIncrement = this.handleIncrement.bind(this);
+    }
 
     styles = {
         fontSize: 20,
@@ -37,17 +38,28 @@ class Counter extends Component {
         if(this.state.tags.length === 0) return <p>There are no tags!</p>;
         return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
     }
-    handleIncrement = () => {
-        console.log('Increment Clicked', this)
+    handleIncrement = (product) => {
+        console.log(product)
+        this.setState({
+            count: this.state.count + 1
+        })
+        console.log('Increment Clicked', this.state.count)
+    }
+    doHandleIncrement = () => {
+        this.handleIncrement({id: 1})
     }
 
     render() { 
         // React.createElement('h1')
         // let classes = this.getBadgeClasses();
+
+        let classes = "badge m-2 badge-";
+        classes += this.state.count === 0 ? "warning" : "primary";
+        
         return (
             <React.Fragment>
                 <span  className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">InCrement</button>
+                <button onClick={this.doHandleIncrement} className="btn btn-secondary btn-sm">InCrement</button>
                 <div>
                     {this.state.tags.length === 0 && "Please create a new tag"}
                    {this.renderTags()} 
