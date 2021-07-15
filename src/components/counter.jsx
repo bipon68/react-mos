@@ -6,18 +6,29 @@ import React, { Component } from 'react';
     js destructuring
     React.Fragment
     Setting Attributes
+    <img src={this.state.imageUrl} alt=""/>
+    <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
+    <span style={{fontSize: 20}} className="badge badge-primary m-2">{this.formatCount()}</span>
+    <span  className="badge badge-primary m-2">{this.formatCount()}</span>
  */
 
 class Counter extends Component {
     state = {
-        count: 0
+        count: 0,
+        imageUrl: 'https://picsum.photos/200'
+    };
+    styles = {
+        fontSize: 20,
+        fontWeight: 'bold'
     }
     render() { 
         // React.createElement('h1')
+        let classes = "badge m-2 badge-"
+        classes += this.state.count === 0 ? "warning" : "primary";
         return (
             <React.Fragment>
-                <span>{this.formatCount()}</span>
-                <button className="button-info">InCrement</button>
+                <span  className={classes}>{this.formatCount()}</span>
+                <button className="btn btn-secondary btn-sm">InCrement</button>
             </React.Fragment>
         );
     }
