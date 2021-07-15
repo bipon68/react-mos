@@ -9,6 +9,7 @@ import React, { Component } from 'react';
     Refactor
     Rendering Lists
     Conditional Rendering
+    Handling Events
     <img src={this.state.imageUrl} alt=""/>
     <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
     <span style={{fontSize: 20}} className="badge badge-primary m-2">{this.formatCount()}</span>
@@ -30,6 +31,9 @@ class Counter extends Component {
         if(this.state.tags.length === 0) return <p>There are no tags!</p>;
         return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
     }
+    handleIncrement(){
+        console.log('Increment Clicked', this)
+    }
 
     render() { 
         // React.createElement('h1')
@@ -37,7 +41,7 @@ class Counter extends Component {
         return (
             <React.Fragment>
                 <span  className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button className="btn btn-secondary btn-sm">InCrement</button>
+                <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">InCrement</button>
                 <div>
                     {this.state.tags.length === 0 && "Please create a new tag"}
                    {this.renderTags()} 
