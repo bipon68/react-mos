@@ -22,6 +22,12 @@ class Counter extends Component {
         imageUrl: 'https://picsum.photos/200',
         tags: ['tag 1', 'tag 2', 'tag 3']
     };
+    // constructor(){
+    //     super();
+    //     console.log('constructor ', this)
+    //     this.handleIncrement = this.handleIncrement.bind(this);
+    // }
+
     styles = {
         fontSize: 20,
         fontWeight: 'bold'
@@ -31,7 +37,7 @@ class Counter extends Component {
         if(this.state.tags.length === 0) return <p>There are no tags!</p>;
         return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>
     }
-    handleIncrement(){
+    handleIncrement = () => {
         console.log('Increment Clicked', this)
     }
 
