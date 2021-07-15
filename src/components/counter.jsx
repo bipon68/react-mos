@@ -6,6 +6,8 @@ import React, { Component } from 'react';
     js destructuring
     React.Fragment
     Setting Attributes
+    Refactor
+    Rendering Lists
     <img src={this.state.imageUrl} alt=""/>
     <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
     <span style={{fontSize: 20}} className="badge badge-primary m-2">{this.formatCount()}</span>
@@ -15,7 +17,8 @@ import React, { Component } from 'react';
 class Counter extends Component {
     state = {
         count: 0,
-        imageUrl: 'https://picsum.photos/200'
+        imageUrl: 'https://picsum.photos/200',
+        tags: ['tag 1', 'tag 2', 'tag 3']
     };
     styles = {
         fontSize: 20,
@@ -28,6 +31,11 @@ class Counter extends Component {
             <React.Fragment>
                 <span  className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button className="btn btn-secondary btn-sm">InCrement</button>
+                <div>
+                    <ul>
+                        {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
+                    </ul>
+                </div>
             </React.Fragment>
         );
     }
