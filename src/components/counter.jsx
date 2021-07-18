@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Counters from './counters';
 
 /**
  *  Specifying Children
@@ -19,6 +20,7 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = {
+       
         count: 0,
         imageUrl: 'https://picsum.photos/200',
         tags: ['tag 1', 'tag 2', 'tag 3']
@@ -58,14 +60,18 @@ class Counter extends Component {
         
         return (
             <React.Fragment>
-                <span  className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                {/* <button onClick={this.doHandleIncrement} className="btn btn-secondary btn-sm">InCrement</button> */
-                }
-                <button onClick={() => this.handleIncrement ({id: 1})} className="btn btn-secondary btn-sm">InCrement</button>
                 <div>
+                    <span  className={this.getBadgeClasses()}>{this.formatCount()}</span>
+                    {/* <button onClick={this.doHandleIncrement} className="btn btn-secondary btn-sm">InCrement</button> */
+                    }
+                    <button onClick={() => this.handleIncrement ({id: 1})} className="btn btn-secondary btn-sm">InCrement</button>
+                </div>
+                {/*
+                    <div>
                     {this.state.tags.length === 0 && "Please create a new tag"}
                    {this.renderTags()} 
-                </div>
+                </div> */
+                }
             </React.Fragment>
         );
     }
