@@ -20,14 +20,14 @@ import Counters from './counters';
 
 class Counter extends Component {
     state = {
-       
+        //value: this.props.value,
         count: 0,
         imageUrl: 'https://picsum.photos/200',
         tags: ['tag 1', 'tag 2', 'tag 3']
     };
     constructor(){
         super();
-        console.log('constructor ', this)
+        //console.log('constructor ', this)
         this.handleIncrement = this.handleIncrement.bind(this);
     }
 
@@ -52,6 +52,7 @@ class Counter extends Component {
     }
 
     render() { 
+        console.log('props', this.props)
         // React.createElement('h1')
         // let classes = this.getBadgeClasses();
 
