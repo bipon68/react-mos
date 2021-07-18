@@ -7,6 +7,20 @@ import Counter from './components/counter';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
 
+// this
+/*const person = {
+  name: "bipon",
+  walk(){
+  console.log(this);
+  }
+}
+// person.walk();
+const walk = person.walk.bind(person);
+walk();
+console.log(walk)
+*/
+
+
 ReactDOM.render(
   // <Counter />,
   <React.StrictMode>
