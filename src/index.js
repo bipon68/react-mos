@@ -40,6 +40,42 @@ const jobs = [
 const activeJobs = jobs.filter((jobs) => {return jobs.isActive})
 */
 
+// Arrow Functions and this
+/*
+const person = {
+  talk(){
+    setTimeout(function() {
+      console.log('this', this)
+    }, 1000)
+    
+  }
+}
+person.talk();
+*/
+/*
+const person = {
+  talk(){
+    var self = this;
+    setTimeout(function() {
+      console.log('self', self)
+    }, 1000)
+    
+  }
+}
+person.talk();
+*/
+
+const person = {
+  talk(){
+    var self = this;
+    setTimeout(() => {
+      console.log('this', this)
+    }, 1000)
+    
+  }
+}
+person.talk();
+
 ReactDOM.render(
   // <Counter />,
   <React.StrictMode>
