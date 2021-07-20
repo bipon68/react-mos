@@ -20,7 +20,7 @@ import Counters from './counters';
 
 class Counter extends Component {
     state = {
-        //value: this.props.value,
+        // value: this.props.counter.value,
         count: 0,
         imageUrl: 'https://picsum.photos/200',
         tags: ['tag 1', 'tag 2', 'tag 3']
@@ -52,7 +52,7 @@ class Counter extends Component {
     }
 
     render() { 
-        console.log('props', this.props)
+        console.log('props counter', this.props.counter)
         // React.createElement('h1')
         // let classes = this.getBadgeClasses();
 
@@ -67,7 +67,7 @@ class Counter extends Component {
                     {/* <button onClick={this.doHandleIncrement} className="btn btn-secondary btn-sm">InCrement</button> */
                     }
                     <button onClick={() => this.handleIncrement ({id: 1})} className="btn btn-secondary btn-sm">InCrement</button>
-                    <button onClick={this.props.onDelete} className="btn btn-danger btn-sm m-2">Delete</button>
+                    <button onClick={() => this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2">Delete</button>
                 </div>
                 {/*
                     <div>
