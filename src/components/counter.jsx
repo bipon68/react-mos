@@ -28,7 +28,7 @@ class Counter extends Component {
     constructor(){
         super();
         //console.log('constructor ', this)
-        this.handleIncrement = this.handleIncrement.bind(this);
+        //this.handleIncrement = this.handleIncrement.bind(this);
     }
 
     styles = {
@@ -67,6 +67,7 @@ class Counter extends Component {
                     {/* <button onClick={this.doHandleIncrement} className="btn btn-secondary btn-sm">InCrement</button> */
                     }
                     <button onClick={() => this.handleIncrement ({id: 1})} className="btn btn-secondary btn-sm">InCrement</button>
+                    <button onClick={this.props.onDelete} className="btn btn-danger btn-sm m-2">Delete</button>
                 </div>
                 {/*
                     <div>
