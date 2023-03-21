@@ -1,0 +1,15 @@
+## git script
+- git init
+- git add README.md
+- git commit -m "first commit"
+- git branch -M main
+- git remote add origin https://github.com/bipon68/react-mos-game.git
+- git push -u origin main
+
+## Step by Step frontend app creation
+- `npm init vite`
+- Step 1 : `project name`
+- Step 2 : `select React`
+- Step 3 : `Select TypeScript`
+- Step 4:   `npm i` dependency install
+- Step 4: Run project `npm run dev`
