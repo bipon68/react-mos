@@ -13,3 +13,5 @@
 - Step 3 : `Select TypeScript`
 - Step 4:   `npm i` dependency install
 - Step 4: Run project `npm run dev`
+- Install bootstrap `npm i bootstrap@5.2.3`
+- Import bootstrap css into `main.tsx` `import 'bootstrap/dist/css/bootstrap.css` [Bootstrap](https://getbootstrap.com/)
