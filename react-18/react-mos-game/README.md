@@ -16,3 +16,4 @@
 - Install bootstrap `npm i bootstrap@5.2.3`
 - Import bootstrap css into `main.tsx` `import 'bootstrap/dist/css/bootstrap.css` [Bootstrap](https://getbootstrap.com/)
 - style component `npm i styled-components` `npm i @types/styled-components`
+- icon setup `npm i react-icons@4.7.1`
