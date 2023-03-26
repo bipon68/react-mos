@@ -13,6 +13,7 @@ import  '../node_modules/bootstrap/dist/css/bootstrap.css'
 import Button from "./Button";
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
+import ExpandableText from "./components/ExpandableText";
 
 function App(){
 
@@ -81,10 +82,12 @@ function App(){
         {/* {alertVisible && <Alert onClose={() => setAlertVisible(false)}>My Alert</Alert>}
         <Button  onClick={() => setAlertVisible(true)}>My Button</Button> */}
     {/* {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)} */}
-      <Button color="primary"  onClick={handleClick} >Button</Button>
+      {/* <Button color="primary"  onClick={handleClick} >Button</Button>
 
       <NavBar cartItemsCount={cartItems.length}/>
-      <Cart onClear={() => setCartItems([])} cartItems={cartItems}/>
+      <Cart onClear={() => setCartItems([])} cartItems={cartItems}/> */}
+
+      <ExpandableText >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum excepturi amet adipisci nisi ut sapiente dolor est officiis qui error incidunt, mollitia, facilis rerum libero suscipit pariatur nihil facere debitis nesciunt odit fugit dignissimos. Aliquam suscipit, dolor dolore optio est placeat beatae inventore ipsam eius exercitationem hic esse maiores nisi perspiciatis dolores, quasi nulla numquam asperiores, sint delectus voluptas! Ipsam impedit asperiores modi quas, voluptate repudiandae ab architecto maxime! Pariatur, voluptatum. Repudiandae assumenda, consectetur ipsum amet dolorum aliquid placeat aspernatur optio molestias debitis, ad nobis expedita labore. Autem praesentium similique earum deserunt maiores, repudiandae inventore ipsa ex laudantium iusto itaque?</ExpandableText>
 
     </div>
 }
