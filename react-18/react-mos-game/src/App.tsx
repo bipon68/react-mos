@@ -11,6 +11,8 @@ import produce from 'immer';
 // import Bootstrap CSS
 import  '../node_modules/bootstrap/dist/css/bootstrap.css'
 import Button from "./Button";
+import NavBar from "./components/NavBar";
+import Cart from "./components/Cart";
 
 function App(){
 
@@ -39,6 +41,8 @@ function App(){
     console.log(...bugs)
   }
 
+  const [cartItems, setCartItems] = useState(['Product1', 'Product2'])
+
 
   return <div>
       {/* <BsFillCalendar2EventFill color="red" size="40"/> */}
@@ -46,8 +50,11 @@ function App(){
       {/* <ListGroup items={items} heading={"Cities"} onSelectItem={handleSelectItem}/> */}
         {/* {alertVisible && <Alert onClose={() => setAlertVisible(false)}>My Alert</Alert>}
         <Button  onClick={() => setAlertVisible(true)}>My Button</Button> */}
-    {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)}
-      <Button color="primary"  onClick={handleClick} >Button</Button>
+    {/* {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)}
+      <Button color="primary"  onClick={handleClick} >Button</Button> */}
+
+      <NavBar cartItemsCount={cartItems.length}/>
+      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
 
     </div>
 }
