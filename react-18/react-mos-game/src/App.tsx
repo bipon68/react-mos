@@ -21,19 +21,16 @@ function App(){
 
   const [alertVisible, setAlertVisible] = useState(false);
 
-   //Update Array in React
-  const [customers, setCustomer] = useState(['Bipon', 'Sajib'])
+   //Updating Arrays of Object in React
+  const [bugs, setBugs] = useState([
+    {id: 1, title: 'Bug 1', fixed: false},
+    {id: 2, title: 'Bug 2', fixed: false}
+  ])
 
   const handleClick = () => {
-    // Add
-    //setCustomer([...customers, 'Fahim'])
-   
-    // Remove
-    //setCustomer(customers.filter(customer => customer !=='Bipon'))
 
-    // Update
-    setCustomer(customers.map(customer => customer === 'Bipon' ? 'Bipon Biswas': customer))
-    console.log(...customers)
+    setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true}: bug))
+    console.log(...bugs)
   }
 
 
