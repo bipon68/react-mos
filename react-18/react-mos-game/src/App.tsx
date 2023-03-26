@@ -31,17 +31,47 @@ function App(){
     {id: 2, title: 'Bug 2', fixed: false}
   ])
 
-  const handleClick = () => {
+  // const handleClick = () => {
 
-    // setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true}: bug))
-    setBugs(produce(draft => {
-      const bug = draft.find(bug => bug.id === 1);
-      if(bug) bug.fixed = true;
-    }))
-    console.log(...bugs)
+  //   // setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true}: bug))
+  //   setBugs(produce(draft => {
+  //     const bug = draft.find(bug => bug.id === 1);
+  //     if(bug) bug.fixed = true;
+  //   }))
+  //   console.log(...bugs)
+  // }
+
+  // Sharing State between Components
+  const [cartItems, setCartItems] = useState(['Product 1', 'Product 2']);
+
+  // exercise : Updating state
+  const [game, setGame] = useState({
+    id: 1,
+    player: {
+      name: 'Bipon'
+    }
+  })
+  const [pizza, setPizza] = useState({
+    name: 'Spicy Pepeeroni',
+    toppings: ['Mushroom']
+  })
+  const [cart, setCart] = useState({
+    discount : 1,
+    items: [
+      {id: 1, title: 'Product 1', quantity: 1},
+      {id: 2, title: 'Product 2', quantity: 1},
+    ]
+  })
+
+  const handleClick = () => {
+    setGame({...game, player: {...game.player, name: 'Sajib'}})
+    setPizza({...pizza, toppings: [...pizza.toppings, 'Cheese']})
+    setCart({...cart, items: cart.items.map(item => item.id === 1 ? {...item, quantity: item.quantity + 1}: item )})
+    console.log(setGame)
+    console.log(setPizza)
+    console.log(setCart)
   }
 
-  const [cartItems, setCartItems] = useState(['Product1', 'Product2'])
 
 
   return <div>
@@ -50,11 +80,11 @@ function App(){
       {/* <ListGroup items={items} heading={"Cities"} onSelectItem={handleSelectItem}/> */}
         {/* {alertVisible && <Alert onClose={() => setAlertVisible(false)}>My Alert</Alert>}
         <Button  onClick={() => setAlertVisible(true)}>My Button</Button> */}
-    {/* {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)}
-      <Button color="primary"  onClick={handleClick} >Button</Button> */}
+    {/* {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)} */}
+      <Button color="primary"  onClick={handleClick} >Button</Button>
 
       <NavBar cartItemsCount={cartItems.length}/>
-      <Cart cartItems={cartItems} onClear={() => setCartItems([])} />
+      <Cart onClear={() => setCartItems([])} cartItems={cartItems}/>
 
     </div>
 }
