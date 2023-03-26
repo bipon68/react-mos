@@ -21,7 +21,7 @@ function App(){
 
   const [alertVisible, setAlertVisible] = useState(false);
 
-   //Update Nested object in React
+   //Update Array in React
   const [customer, setCustomer] = useState({
     name: 'Bipon',
     address: {
