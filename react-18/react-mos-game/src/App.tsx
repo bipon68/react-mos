@@ -6,6 +6,8 @@ import Message from "./Message";
 import {BsFillCalendar2EventFill} from 'react-icons/bs'
 import Like from "./components/Like";
 
+import produce from 'immer';
+
 // import Bootstrap CSS
 import  '../node_modules/bootstrap/dist/css/bootstrap.css'
 import Button from "./Button";
@@ -29,7 +31,11 @@ function App(){
 
   const handleClick = () => {
 
-    setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true}: bug))
+    // setBugs(bugs.map(bug => bug.id === 1 ? {...bug, fixed: true}: bug))
+    setBugs(produce(draft => {
+      const bug = draft.find(bug => bug.id === 1);
+      if(bug) bug.fixed = true;
+    }))
     console.log(...bugs)
   }
 
@@ -40,7 +46,7 @@ function App(){
       {/* <ListGroup items={items} heading={"Cities"} onSelectItem={handleSelectItem}/> */}
         {/* {alertVisible && <Alert onClose={() => setAlertVisible(false)}>My Alert</Alert>}
         <Button  onClick={() => setAlertVisible(true)}>My Button</Button> */}
-
+    {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)}
       <Button color="primary"  onClick={handleClick} >Button</Button>
 
     </div>
