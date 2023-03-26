@@ -22,19 +22,18 @@ function App(){
   const [alertVisible, setAlertVisible] = useState(false);
 
    //Update Array in React
-  const [customer, setCustomer] = useState({
-    name: 'Bipon',
-    address: {
-      city: 'Dhaka',
-      zipCode: 9600
-    }
-  })
+  const [customers, setCustomer] = useState(['Bipon', 'Sajib'])
 
   const handleClick = () => {
-    setCustomer({
-      ...customer,
-      address: {...customer, ...customer.address, zipCode: 9000}
-    })
+    // Add
+    //setCustomer([...customers, 'Fahim'])
+   
+    // Remove
+    //setCustomer(customers.filter(customer => customer !=='Bipon'))
+
+    // Update
+    setCustomer(customers.map(customer => customer === 'Bipon' ? 'Bipon Biswas': customer))
+    console.log(...customers)
   }
 
 
@@ -44,7 +43,7 @@ function App(){
       {/* <ListGroup items={items} heading={"Cities"} onSelectItem={handleSelectItem}/> */}
         {/* {alertVisible && <Alert onClose={() => setAlertVisible(false)}>My Alert</Alert>}
         <Button  onClick={() => setAlertVisible(true)}>My Button</Button> */}
-      {customer.address.zipCode}
+
       <Button color="primary"  onClick={handleClick} >Button</Button>
 
     </div>
