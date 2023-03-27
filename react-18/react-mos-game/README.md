@@ -18,6 +18,7 @@
 - style component `npm i styled-components` `npm i @types/styled-components`
 - icon setup `npm i react-icons@4.7.1`
 - install immer `npm i immer@9.0.19`
+- form hook `npm i react-hook-form@7.43`
 
 
 
