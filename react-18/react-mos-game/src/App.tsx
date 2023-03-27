@@ -9,13 +9,36 @@ import Like from "./components/Like";
 import produce from 'immer';
 
 // import Bootstrap CSS
-import  '../node_modules/bootstrap/dist/css/bootstrap.css'
+// import  '../node_modules/bootstrap/dist/css/bootstrap.css'
+
 import Button from "./Button";
 import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import ExpandableText from "./components/ExpandableText";
+import Form from "./Form";
+
+const countInitial = () => {
+  console.log('Run function')
+  return 4
+}
 
 function App(){
+
+  // Why I choose useState hook
+  const [count, setCount] = useState(4);
+  const [theme, setTheme] = useState('blue');
+
+  const decrementCount = () => {
+    setCount(prevCount => prevCount - 1)
+
+  }
+  const incrementCount = () => {
+    setCount(prevCount => prevCount + 1)
+    setTheme('red')
+  }
+
+
+  
 
   let items = ["Dhaka", "Khulna", "Rajshai", "Albania", "Berlin"];
   //  items = [];
@@ -87,8 +110,14 @@ function App(){
       <NavBar cartItemsCount={cartItems.length}/>
       <Cart onClear={() => setCartItems([])} cartItems={cartItems}/> */}
 
-      <ExpandableText >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum excepturi amet adipisci nisi ut sapiente dolor est officiis qui error incidunt, mollitia, facilis rerum libero suscipit pariatur nihil facere debitis nesciunt odit fugit dignissimos. Aliquam suscipit, dolor dolore optio est placeat beatae inventore ipsam eius exercitationem hic esse maiores nisi perspiciatis dolores, quasi nulla numquam asperiores, sint delectus voluptas! Ipsam impedit asperiores modi quas, voluptate repudiandae ab architecto maxime! Pariatur, voluptatum. Repudiandae assumenda, consectetur ipsum amet dolorum aliquid placeat aspernatur optio molestias debitis, ad nobis expedita labore. Autem praesentium similique earum deserunt maiores, repudiandae inventore ipsa ex laudantium iusto itaque?</ExpandableText>
+      {/* <ExpandableText >Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum excepturi amet adipisci nisi ut sapiente dolor est officiis qui error incidunt, mollitia, facilis rerum libero suscipit pariatur nihil facere debitis nesciunt odit fugit dignissimos. Aliquam suscipit, dolor dolore optio est placeat beatae inventore ipsam eius exercitationem hic esse maiores nisi perspiciatis dolores, quasi nulla numquam asperiores, sint delectus voluptas! Ipsam impedit asperiores modi quas, voluptate repudiandae ab architecto maxime! Pariatur, voluptatum. Repudiandae assumenda, consectetur ipsum amet dolorum aliquid placeat aspernatur optio molestias debitis, ad nobis expedita labore. Autem praesentium similique earum deserunt maiores, repudiandae inventore ipsa ex laudantium iusto itaque?</ExpandableText> */}
 
+      {/* <button onClick={decrementCount}>-</button>
+      <span>{count}</span>
+      <span>{theme}</span>
+      <button onClick={incrementCount}>+</button> */}
+
+      <Form />
     </div>
 }
 
