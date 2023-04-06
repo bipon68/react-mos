@@ -18,6 +18,7 @@ import ExpandableText from "./components/ExpandableText";
 import Form from "./Form";
 import { useEffect } from "react";
 import ProductList from "./components/ProductList";
+import axios from "axios";
 
 
 const countInitial = () => {
@@ -108,9 +109,26 @@ function App(){
   // useEffect(() => {
   //   document.title = 'My React App'
   // })
+interface User{
+  id: number;
+  name: string;
+}
+
+const [category, setCategory] = useState('');
+const [users, setUsers] = useState<User[]>([]);
+const [error, setError] = useState('')
+
+useEffect(() => {
+  // return promise
+  axios.get<User[]>('https://jsonplaceholder.typicode.com/users')
+    .then(res => setUsers(res.data))
+    .catch(err => setError(err.message))
+
+}, [])
 
 
-const [category, setCategory] = useState('')
+
+
 
   return <div>
       {/* <BsFillCalendar2EventFill color="red" size="40"/> */}
@@ -134,13 +152,17 @@ const [category, setCategory] = useState('')
       {/* <Form /> */}
 
       {/* <input type="text" className="form-control"/> */}
-      <select  className="from-select" onChange={(event) => setCategory(event.target.value)}>
+      {/* <select  className="from-select" onChange={(event) => setCategory(event.target.value)}>
         <option value=""></option>
         <option value="Tools">Tools</option>
         <option value="Pen">Pen</option>
       </select>
  
-      <ProductList  category={category}/>
+      <ProductList  category={category}/> */}
+      {error && <p className="text-danger">{error}</p>}
+      <ul>
+        {users.map(user => <li key={user.id}>{user.name}</li>)}
+      </ul>
     </div>
 }
 
