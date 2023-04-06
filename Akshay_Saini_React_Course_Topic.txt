@@ -1,0 +1,56 @@
+Y`Namaste React Web Series` major topics 🚀
+✅ React Hooks
+✅ State Management
+✅ Config Drive UI
+✅ Redux
+✅ Reusable Components
+✅ Rich and Interactive UI
+✅ Functional Comp.
+✅ Props & State
+✅ List & Keys
+✅ Class Components
+✅ Scaling React Apps
+✅ Best Coding Practices
+✅ React Router
+✅ Optimizing React Apps
+✅ Building Live Projects
+✅ Bundlers & Babel
+✅ JSX
+✅ React.Fragment
+✅ Code Splitting
+✅ Dynamic UI
+✅ Higher Order Comp.
+✅ Pure Components
+✅ Code Splitting
+✅ React Testing Library
+✅ Interview Questions
+✅ Uncontrolled Comp.
+✅ Building Custom Hooks
+✅ Handling Events
+✅ Conditional Rendering
+✅ Tailwind CSS
+and so much more ...
+
+Basically, I'll teach you everything I've learned over years of working in the industry and everything that I know about React. ❤️
+
+It will be all Project-Based Learning, we will see how the theory concepts fit into the projects!
+
+I won't be teaching with boring slides,
+We will dive into the code right from Day 1 🚀
+
+We will start from scratch: ZERO and go till we learn building production-ready apps: HERO
+
+from Zero to Hero while practising 😎
+
+Sounds cool, isn't it?
+
+So what are you waiting for?
+
+Early bird discount of 33% is running right now!✌️
+
+and Registeration Link - https://lnkd.in/d9ckj8nQ
+
+Cheers,
+Akshay Saini
+
+#NamasteReact #react #javascript

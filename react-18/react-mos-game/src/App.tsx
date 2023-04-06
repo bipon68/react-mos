@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Alert from "./components/Alert";
 
 import ListGroup from "./components/ListGroup";
@@ -16,6 +16,9 @@ import NavBar from "./components/NavBar";
 import Cart from "./components/Cart";
 import ExpandableText from "./components/ExpandableText";
 import Form from "./Form";
+import { useEffect } from "react";
+import ProductList from "./components/ProductList";
+
 
 const countInitial = () => {
   console.log('Run function')
@@ -96,7 +99,18 @@ function App(){
     console.log(setCart)
   }
 
+  // const ref = useRef<HTMLInputElement>(null);
 
+  // afterRender
+  // useEffect(() => {
+  //   if(ref.current) ref.current.focus();
+  // })
+  // useEffect(() => {
+  //   document.title = 'My React App'
+  // })
+
+
+const [category, setCategory] = useState('')
 
   return <div>
       {/* <BsFillCalendar2EventFill color="red" size="40"/> */}
@@ -117,7 +131,16 @@ function App(){
       <span>{theme}</span>
       <button onClick={incrementCount}>+</button> */}
 
-      <Form />
+      {/* <Form /> */}
+
+      {/* <input type="text" className="form-control"/> */}
+      <select  className="from-select" onChange={(event) => setCategory(event.target.value)}>
+        <option value=""></option>
+        <option value="Tools">Tools</option>
+        <option value="Pen">Pen</option>
+      </select>
+ 
+      <ProductList  category={category}/>
     </div>
 }
 

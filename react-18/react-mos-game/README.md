@@ -19,6 +19,7 @@
 - icon setup `npm i react-icons@4.7.1`
 - install immer `npm i immer@9.0.19`
 - form hook `npm i react-hook-form@7.43`
+- zod `npm i zod@3.20.6` and `npm i @hookform/resolvers@2.9.11` [Zod Dev](https://zod.dev/)
 
 
 
