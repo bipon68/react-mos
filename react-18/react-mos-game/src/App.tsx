@@ -18,7 +18,7 @@ import ExpandableText from "./components/ExpandableText";
 import Form from "./Form";
 import { useEffect } from "react";
 import ProductList from "./components/ProductList";
-import axios from "axios";
+import axios, { AxiosError, CanceledError } from "axios";
 
 
 const countInitial = () => {
@@ -117,12 +117,40 @@ interface User{
 const [category, setCategory] = useState('');
 const [users, setUsers] = useState<User[]>([]);
 const [error, setError] = useState('')
+const [isLoading, setLoading] = useState(false)
 
-useEffect(() => {
+useEffect( () => {
   // return promise
-  axios.get<User[]>('https://jsonplaceholder.typicode.com/users')
-    .then(res => setUsers(res.data))
-    .catch(err => setError(err.message))
+  // const fetchUsers = async () => {
+    // try{
+  // get -> await promise -> res / err
+  // const controller = new AbortController();
+  // const res = await axios.get<User[]>('https://jsonplaceholder.typicode.com/xusers', {signal: controller.signal})
+  // setUsers(res.data)
+  //     }
+  //     catch(err){
+  //       setError((err as AxiosError).message)
+  //     }
+    
+  // }
+
+
+  const controller = new AbortController();
+  setLoading(true)
+  const res =  axios.get<User[]>('https://jsonplaceholder.typicode.com/users', {signal: controller.signal})
+  // setUsers(res.data)
+    .then((res) => {
+      setUsers(res.data);
+      setLoading(false)
+    })
+    .catch((err) => {
+      if(err instanceof CanceledError) return;
+      setError(err.message);
+      setLoading(false)
+    })
+
+
+    return () => controller.abort();
 
 }, [])
 
@@ -160,6 +188,7 @@ useEffect(() => {
  
       <ProductList  category={category}/> */}
       {error && <p className="text-danger">{error}</p>}
+      {isLoading && <div className="spinner-border"></div>}
       <ul>
         {users.map(user => <li key={user.id}>{user.name}</li>)}
       </ul>
